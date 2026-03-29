@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectTrack Pro • Private Cloud</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-72 bg-zinc-900 border-r border-zinc-800 p-6 flex flex-col">
+            <div class="flex items-center gap-3 mb-12">
+                <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-lg">P</div>
+                <div>
+                    <h1 class="text-3xl font-semibold tracking-tighter">ProjectTrack</h1>
+                    <p class="text-xs text-zinc-400 -mt-1">Pro • Private Cloud</p>
+                </div>
+            </div>
+            
+            <nav class="space-y-1">
+                <a href="/" class="flex items-center gap-3 px-5 py-4 rounded-3xl bg-zinc-800 text-white font-medium"><i class="fa-solid fa-chart-column w-5"></i> Dashboard</a>
+                <a href="/" class="flex items-center gap-3 px-5 py-4 rounded-3xl hover:bg-zinc-800 font-medium"><i class="fa-solid fa-folder w-5"></i> All Projects</a>
+                <a href="#" class="flex items-center gap-3 px-5 py-4 rounded-3xl hover:bg-zinc-800 font-medium"><i class="fa-solid fa-tasks w-5"></i> My Tasks</a>
+                <a href="#" class="flex items-center gap-3 px-5 py-4 rounded-3xl hover:bg-zinc-800 font-medium"><i class="fa-solid fa-users w-5"></i> Team</a>
+            </nav>
+            
+            <div class="mt-auto pt-8 border-t border-zinc-700 text-xs text-zinc-500 flex items-center gap-2">
+                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                Running in Private Cloud (Docker)
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 overflow-auto">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>
