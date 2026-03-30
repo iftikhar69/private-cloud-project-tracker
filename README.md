@@ -82,14 +82,15 @@ No floating IP or public access – exactly as required for data sensitivity.
 
 6. **What challenges did you face?**
 ```
-→ The biggest challenge was the volume mount overwriting files. We solved it by changing the mount point and
-updating the database URI to an absolute path inside the volume.
+→ The biggest challenge was the volume mount overwriting files. We solved it by changing
+the mount point and updating the database URI to an absolute path
+inside the volume.
 ```
 
 7. **How would you scale this in production?**
 ```
-→ We would use OpenStack Magnum to deploy Kubernetes for orchestration, add persistent storage with Cinder, and
-implement proper logging/monitoring with Prometheus.
+→ We would use OpenStack Magnum to deploy Kubernetes for orchestration, add persistent storage with Cinder
+and implement proper logging/monitoring with Prometheus.
 ```
 
 8. **How did you test the application?**
