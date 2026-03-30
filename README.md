@@ -11,14 +11,25 @@ A fully containerised project-tracking web application deployed on a private clo
 - Docker
 
 ## Quick Start (Docker)
+
+ step 1 
+Make sure you have installed:
+Docker
+check: 
 ```
-docker build -t project-tracker . --no-cache
-mkdir -p data
-docker run -d \
-  -p 5000:5000 \
-  -v $(pwd)/data:/data \
-  --name project-tracker-app \
-  project-tracker
+docker --version
+```
+ step 2 Build Docker Image
+Run this inside the project directory:
+
+```
+docker build -t project-tracker .
+---
+```
+step 3 Run Container
+
+```
+docker run -d -p 5000:5000 -v "$(pwd)/data:/data" --name project-tracker-app project-tracker
 ```
 
 
@@ -30,41 +41,48 @@ Print this or keep it open during the session. These are the **most likely quest
 
 ```
 1. **Why did you choose a private cloud instead of a public cloud?**  
-   → “Because the scenario explicitly requires data sensitivity and regulatory compliance.
- A private cloud guarantees full data residency on-premise,
+   → “Because the scenario explicitly requires data sensitivity and regulatory compliance.A private cloud guarantees full data residency on-premise,
  which public clouds cannot provide without additional legal agreements.”
 ```
 ```
 2. **Why OpenStack?**  
-   → “OpenStack is the leading open-source IaaS platform. It gives complete control over compute, storage and networking, and it natively supports Docker containers – exactly what the assignment asked for.”
+   → “OpenStack is the leading open-source IaaS platform. It gives complete control over compute,
+storage and networking, and it natively supports Docker containers – exactly what the assignment asked for.”
 ```
 ```
 3. **Why Docker for containerisation?**  
-   → “Docker provides portability, lightweight resource usage, and easy versioning. It also makes deployment consistent between development and the private cloud environment.”
+   → “Docker provides portability, lightweight resource usage, and easy versioning. It also makes deployment consistent between development and
+ the private cloud environment.”
 ```
 ```
 4. **Explain your volume mount strategy.**  
-   → “We mounted only the `/data` directory (`-v $(pwd)/data:/data`) so the SQLite database persists across container restarts. Mounting the entire `/app` folder caused issues earlier, so we corrected it to avoid overwriting application files.”
+   → “We mounted only the `/data` directory (`-v $(pwd)/data:/data`) so the SQLite database persists across container restarts.
+Mounting the entire `/app` folder caused issues earlier, so we corrected it to avoid overwriting application files.”
 ```
 ```
 5. **How is networking configured?**  
-   → “The application is only exposed on the internal private network (192.168.100.0/24). No floating IP or public access – exactly as required for data sensitivity.”
+   → “The application is only exposed on the internal private network (192.168.100.0/24).
+No floating IP or public access – exactly as required for data sensitivity.”
 ```
 ```
 6. **What challenges did you face?**  
-   → “The biggest challenge was the volume mount overwriting files. We solved it by changing the mount point and updating the database URI to an absolute path inside the volume.”
+   → “The biggest challenge was the volume mount overwriting files. We solved it by changing the mount point and
+updating the database URI to an absolute path inside the volume.”
 ```
 ```
 7. **How would you scale this in production?**  
-   → “We would use OpenStack Magnum to deploy Kubernetes for orchestration, add persistent storage with Cinder, and implement proper logging/monitoring with Prometheus.”
+   → “We would use OpenStack Magnum to deploy Kubernetes for orchestration, add persistent storage with Cinder, and
+implement proper logging/monitoring with Prometheus.”
 ```
 ```
 8. **How did you test the application?**  
-   → “We performed full CRUD testing – add, view, edit and delete projects – both locally and inside the Docker container. Screenshots in the report show the working application.”
+   → “We performed full CRUD testing – add, view, edit and delete projects – both locally and inside the Docker container.
+ Screenshots in the report show the working application.”
 ```
 ```
 9. **What is the role of the persistent volume?**  
-   → “It ensures the projects.db file survives if the container is stopped or restarted – critical for a stateful application.”
+   → “It ensures the projects.db file survives
+if the container is stopped or restarted – critical for a stateful application.”
 ```
 ```
 10. **Any final reflection?**  
