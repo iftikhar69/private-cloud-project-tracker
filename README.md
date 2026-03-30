@@ -21,16 +21,18 @@ docker run -d \
   project-tracker
 ```
 
-```
+
 ### 2. Oral Defence Cheat Sheet (10-15 min Q&A with Paul Laird)
 
 Print this or keep it open during the session. These are the **most likely questions** based on the assignment brief.
 
 **Expected Questions & Model Answers**
-```
+
 ```
 1. **Why did you choose a private cloud instead of a public cloud?**  
-   → “Because the scenario explicitly requires data sensitivity and regulatory compliance. A private cloud guarantees full data residency on-premise, which public clouds cannot provide without additional legal agreements.”
+   → “Because the scenario explicitly requires data sensitivity and regulatory compliance.
+ A private cloud guarantees full data residency on-premise,
+ which public clouds cannot provide without additional legal agreements.”
 ```
 ```
 2. **Why OpenStack?**  
