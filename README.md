@@ -108,6 +108,7 @@ if the container is stopped or restarted
 
 10. **Any final reflection?**  
  ```
-  → This project showed me how powerful the combination of private cloud + containers is for secure, compliant workloads.
-I now understand why volume management and networking are so important in real deployments.”
+  → This project showed me how powerful the combination of private cloud + containers is for secure,
+ compliant workloads.I now understand why volume management and
+networking are so important in real deployments.”
 ```
