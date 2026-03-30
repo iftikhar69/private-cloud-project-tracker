@@ -47,26 +47,31 @@ Print this or keep it open during the session. These are the **most likely quest
 
 1. **Why did you choose a private cloud instead of a public cloud?**
 ``` 
-→ Because the scenario explicitly requires data sensitivity and regulatory compliance.A private cloud guarantees full data residency on-premise,
+→ Because the scenario explicitly requires data sensitivity and regulatory compliance.
+A private cloud guarantees full data residency on-premise,
  which public clouds cannot provide without additional legal agreements.
 ```
 
 2. **Why OpenStack?**
 ```
 → OpenStack is the leading open-source IaaS platform. It gives complete control over compute,
-storage and networking, and it natively supports Docker containers – exactly what the assignment asked for.
+storage and networking, and
+it natively supports Docker containers – exactly what the assignment asked for.
 
 ```
 3. **Why Docker for containerisation?**
 ```
-→ Docker provides portability, lightweight resource usage, and easy versioning. It also makes deployment consistent between development and
+→ Docker provides portability, lightweight resource usage, and easy versioning.
+ It also makes deployment consistent between development and
  the private cloud environment.
 ```
 
 4. **Explain your volume mount strategy.**
 ```
-→ We mounted only the `/data` directory (`-v $(pwd)/data:/data`) so the SQLite database persists across container restarts.
-Mounting the entire `/app` folder caused issues earlier, so we corrected it to avoid overwriting application files.
+→ We mounted only the `/data` directory (`-v $(pwd)/data:/data`) so
+the SQLite database persists across container restarts.
+Mounting the entire `/app` folder caused issues earlier, so
+we corrected it to avoid overwriting application files.
 ```
 
 5. **How is networking configured?**  
@@ -89,17 +94,20 @@ implement proper logging/monitoring with Prometheus.
 
 8. **How did you test the application?**
 ```
-→ We performed full CRUD testing – add, view, edit and delete projects – both locally and inside the Docker container.
+→ We performed full CRUD testing – add, view, edit and delete projects
+– both locally and inside the Docker container.
  Screenshots in the report show the working application.
 ```
 
 9. **What is the role of the persistent volume?**  
 ```
 → It ensures the projects.db file survives
-if the container is stopped or restarted – critical for a stateful application.
+if the container is stopped or restarted
+– critical for a stateful application.
 ```
 
 10. **Any final reflection?**  
  ```
-  → This project showed me how powerful the combination of private cloud + containers is for secure, compliant workloads. I now understand why volume management and networking are so important in real deployments.”
+  → This project showed me how powerful the combination of private cloud + containers is for secure, compliant workloads.
+I now understand why volume management and networking are so important in real deployments.”
 ```
