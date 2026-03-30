@@ -11,7 +11,7 @@ A fully containerised project-tracking web application deployed on a private clo
 - Docker
 
 ## Quick Start (Docker)
-```bash
+```
 docker build -t project-tracker . --no-cache
 mkdir -p data
 docker run -d \
@@ -19,38 +19,7 @@ docker run -d \
   -v $(pwd)/data:/data \
   --name project-tracker-app \
   project-tracker
-Access: http://192.168.100.15:5000 (private cloud IP)
-Repository Contents
-
-app.py – Main Flask application
-Dockerfile
-requirements.txt
-templates/ – HTML templates
-screenshots/ – Evidence screenshots
-deployment-commands.md
-
-GitHub: Private repo (submitted as compressed archive)
-text**`deployment-commands.md`** (copy exactly):
-
-```markdown
-# Deployment Commands – Private Cloud
-
-1. Build the Docker image
-   ```bash
-   docker build -t project-tracker . --no-cache
-
-Create persistent data folderBashmkdir -p data
-Run the container with volume mountBashdocker run -d \
-  -p 5000:5000 \
-  -v $(pwd)/data:/data \
-  --name project-tracker-app \
-  project-tracker
-VerifyBashdocker ps
-docker logs project-tracker-app
-Access the application
-http://192.168.100.15:5000
-
-text---
+```
 
 ### 2. Oral Defence Cheat Sheet (10-15 min Q&A with Paul Laird)
 
